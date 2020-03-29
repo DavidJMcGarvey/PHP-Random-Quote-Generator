@@ -1,6 +1,7 @@
 <?php
 include 'inc/functions.php';
-
+$quote = getRandomQuote($quotes);
+echo $quote['quote'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
