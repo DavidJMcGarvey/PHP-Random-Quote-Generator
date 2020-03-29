@@ -50,7 +50,7 @@ $quotes = [
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote($arr) {
   global $quotes;
-  $quotesCount = count($quotes) - 1;
+  $quotesCount = count($arr) - 1;
   $random = rand(0, $quotesCount);
   return $quotes[$random];
 }
@@ -60,5 +60,9 @@ function printQuote() {
 
 }
 
+// function to randomly generate background color
+
+
+// function to auto-refresh quotes page
 
 ?>
