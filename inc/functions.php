@@ -57,12 +57,44 @@ function getRandomQuote($arr) {
 
 // Create the printQuote funtion and name it printQuote
 function printQuote() {
+  global $quotes;
+  $quote = getRandomQuote($quotes);
+  $title = $quote['quote'];
+  $source = $quote['source'];
+  $citation = $quote['citation'];
+  $year = $quote['year'];
 
+  echo "<p class=\"quote\">$title</p>";
+  echo "<p class=\"source\">$source";
+  if ($citation) {
+    echo "<span class=\"citation\">$citation</span>";
+  } else {
+    echo "";
+  }
+  if ($year) {
+    echo "<span class=\"year\">$year</span></p>";
+  } else {
+    echo "";
+  }
+  
 }
 
-// function to randomly generate background color
+// Functions to randomly generate background color RGB numbers
+function randomRGB() {
+  return rand(1, 256);
+}
 
+// Takes randomly generated colors and adds them to body CSS
+function backgroundColor() {
+  $red = randomRGB();
+  $green = randomRGB();
+  $blue = randomRGB();
+  echo "<body style=\"background-color:rgb($red,$green,$blue)\">";
+}
 
-// function to auto-refresh quotes page
+// Auto-refresh quotes page every 18 seconds
+function reloadPage() {
+  echo "<meta http-equiv=\"refresh\" content=\"18\" />";
+}
 
 ?>
